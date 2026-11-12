@@ -1,0 +1,60 @@
+CORREÇÃO — DESTAQUE DE QUINTA-FEIRA
+
+Arquivos alterados:
+- script.js
+- style.css
+
+Arquivos preservados sem alteração:
+- index.html
+- config.js
+
+O que foi corrigido:
+1. O destaque semanal continua sendo controlado por config.destaqueSemanal.
+2. Quinta-feira continua configurada como dia automático.
+3. O layout sem imagem agora ocupa a largura correta do card; antes a grade reservava uma coluna vazia para a imagem.
+4. O componente foi redesenhado apenas no CSS para ficar mais integrado ao visual verde/dourado do site.
+5. O bloco “É HOJE” ganhou hierarquia visual mais forte sem virar popup/banner agressivo.
+6. Linhas adicionais passam a aparecer como etiquetas organizadas e responsivas.
+7. Se uma imagem semanal falhar, a área da imagem é ocultada e o componente volta automaticamente ao modo texto.
+8. Quando a quinta-feira começa com o site já aberto, o sistema de reveal é reaplicado para evitar o componente invisível até o usuário rolar a página.
+9. Corrigido o teste “ALTERAÇÃO DO DIA”: ele dizia segunda-feira mas usava 2026-09-22, que é terça-feira. Agora usa 2026-09-21, que é segunda-feira.
+
+Não foram alterados:
+- roleta
+- pedidos
+- WhatsApp
+- produtos
+- Reels
+- modais
+- eventos
+- reservas
+- sistema de horários 1/2/3
+- conteúdo comercial da quinta-feira
+- dias de funcionamento
+
+Observação:
+O config atual possui hero.promocao = “Rodízio às quintas · $60”. Esse dado comercial foi preservado, pois não foi fornecida confirmação para alterar preço ou moeda.
+
+INTERNACIONALIZAÇÃO
+
+- O seletor de idioma oferece Português, English e Español e salva a preferência em localStorage.
+- As traduções do site ficam em translations.js; os dados operacionais do config.js (preços, horários, imagens e contatos) são preservados.
+- Ao abrir o cardápio externo, o site envia o idioma na query string: ?lang=pt, ?lang=en ou ?lang=es. O sistema do cardápio deve ler esse parâmetro e selecionar a tradução correspondente, usando Português como padrão.
+- No cardápio, o parâmetro pode ser lido com: new URLSearchParams(window.location.search).get("lang").
+- Os links para o cardápio mantêm os parâmetros existentes e atualizam apenas lang.
+
+SINCRONIZAÇÃO E CONVERSÃO
+
+- O botão de pedido do rodapé acompanha o mesmo estado de funcionamento do cabeçalho: pedido direto quando aberto e fluxo de agendamento nos outros períodos.
+- O botão flutuante de retorno ao topo aparece após a rolagem e usa rolagem suave.
+- Os pop-ups promocionais podem ser ajustados em config.js, dentro de promocoes.popups:
+  - ativo: ativa ou desativa o sistema.
+  - atrasoMs: tempo inicial em milissegundos antes de permitir a exibição.
+  - percentualRolagem: fração da página percorrida que pode antecipar a exibição (de 0 a 1).
+  - produtosVisualizados: quantidade de cards de produtos ou Reels vistos para antecipar a exibição.
+  - intervaloHoras: intervalo mínimo entre exibições em navegadores que permitem armazenamento local.
+  - antecedenciaRodizioDias: quantos dias antes do dia definido em destaqueSemanal.diaSemana o rodízio pode ter prioridade.
+  - tipos.sugestao, tipos.promocao e tipos.rodizio: ativa ou desativa cada categoria.
+- O conteúdo dos pop-ups reutiliza os dados já configurados em sugestaoChef, promocoes.topBar e hero.promocao; não cria nem altera preços ou condições comerciais.
+- O pop-up do rodízio respeita destaqueSemanal.diaSemana e tem prioridade na véspera e no dia configurado. O sistema aguarda a tela inicial e outros modais, inclusive a roleta.
+- Os links e mensagens do pop-up são preparados no idioma selecionado. O intervalo e a opção de não repetir na mesma sessão são salvos no navegador.

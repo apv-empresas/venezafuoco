@@ -1,0 +1,61 @@
+VENEZA FUOCO — CARDÁPIO ORIGINAL COM IDENTIDADE ATUALIZADA
+===============================
+
+ARQUIVOS
+- index.html
+- style.css
+- script.js
+- config.js
+- logo.png
+
+O QUE FOI PRESERVADO
+- Tela de boas-vindas e categorias.
+- Navegação por categoria.
+- Cards de pizzas.
+- Modal por produto.
+- Quantidade, endereço e observações do fluxo original.
+- Upsells por pizza e cálculo de total.
+- Finalização via WhatsApp.
+- Links iFood/aiqfome.
+- Integrações N8N e Apps Script (agora com flags no CONFIG).
+- Rodapé, Instagram, endereço e contato.
+
+MELHORIAS ADICIONADAS
+- Identidade visual alinhada à marca VENEZA FUOCO (preto/dourado + Cormorant Garamond/Montserrat).
+- WhatsApp em primeiro plano e marketplaces como alternativas.
+- Status operacional igual ao site: aberto / pré-atendimento / fechado.
+- Dias de funcionamento, exceções, feriados e horários especiais controlados no CONFIG.
+- Carrinho multiproduto persistente em localStorage.
+- Checkout completo: nome, entrega/retirada, endereço, pagamento, troco e observações.
+- Mensagem do WhatsApp estruturada com todos os itens, adicionais, subtotais e total.
+- Tamanho, pedaços, quantidade de pessoas e selos configuráveis por produto.
+- Categorias e produtos podem ser ativados/desativados no CONFIG.
+- Acessibilidade: zoom preservado, botões reais, Escape para fechar modal, aria-modal e foco visível.
+- Lazy loading nas imagens do cardápio.
+- Tratamento de links provisórios: o usuário é avisado quando o destino ainda não foi configurado.
+
+CONFIG COMO CENTRO DE CONTROLE
+- Toda informação comercial alterável deve ficar em config.js.
+- Para horários consistentes com o site principal, mantenha o bloco `horarios` idêntico nos dois CONFIGs.
+- N8N: defina `n8nAtivo: true` somente depois de colocar a URL real.
+- Apps Script: defina `googleAppsScriptAtivo: true` somente depois de colocar a URL real.
+- Substitua `sitePrincipal`, `ifood` e `aiqfome` por URLs oficiais antes da publicação.
+
+FOTOS
+As URLs de imagens antigas foram preservadas para não quebrar o projeto. A recomendação é substituir no CONFIG por fotografias próprias em WebP/AVIF hospedadas no projeto.
+
+VEO 3
+O prompt final de reprodução fiel depende do vídeo de referência e da imagem/personagem. Sem esses dois arquivos não é possível descrever timing, câmera, atuação e lip sync com fidelidade. Envie ambos para gerar o JSON final específico.
+
+
+IDIOMAS, CARRINHO COMPARTILHADO E UPSELL
+----------------------------------------
+- O idioma selecionado no site principal é compartilhado com o cardápio por `sr-ofrelio-language` e pelo parâmetro `?lang=`.
+- As traduções do cardápio ficam em `cardapio/translations.js`; os nomes, descrições, categorias, status e textos de checkout são aplicados sem alterar os preços originais.
+- O carrinho único usa a chave `sr-ofrelio-cardapio-v2`, centralizada em `shared-cart.js`. O site principal e o cardápio leem e atualizam o mesmo conteúdo.
+- O carrinho do site principal permite revisar, alterar quantidades e remover itens. O botão de continuidade abre o checkout original do cardápio com o carrinho já aberto.
+- O upsell de pizza doce é configurado em `cardapio/config.js`, no objeto `upsellCarrinho`:
+  - `ativo`: `true` exibe a oferta; `false` desativa.
+  - `produtoId`: ID de uma pizza doce existente no array `pizzas`.
+  - `percentualDesconto`: percentual entre 0 e 100. Use `0` para preço normal.
+- O desconto é gravado no item do carrinho e aparece no resumo e na mensagem de WhatsApp, sem alterar o preço cadastrado do produto.

@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title id="page-title"></title>
+
+    <link id="page-favicon" rel="icon" type="image/png" href="">
+
+    <link id="google-fonts-link" href="" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <meta id="meta-description" name="description" content="">
+
+    <meta id="meta-keywords" name="keywords" content="">
+
+    <meta id="meta-robots" name="robots" content="index,follow">
+    <meta id="theme-color" name="theme-color" content="">
+
+    <meta id="og-title" property="og:title" content="">
+    <meta id="og-description" property="og:description" content="">
+    <meta id="og-image" property="og:image" content="">
+    <meta id="og-type" property="og:type" content="website">
+    <meta id="og-locale" property="og:locale" content="pt_BR">
+    <meta id="og-url" property="og:url" content="">
+    <meta id="twitter-card" name="twitter:card" content="summary_large_image">
+    <link id="canonical-link" rel="canonical">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <script id="schema-restaurant" type="application/ld+json">
+    {
+        "@context": "https://schema.org"
+    }
+    </script>
+</head>
+
+<body>
+
+    <section class="opening-screen" id="opening-screen" role="dialog" aria-modal="true" tabindex="-1"
+        aria-labelledby="opening-title" aria-describedby="opening-subtitle" hidden>
+        <div class="opening-backdrop" id="opening-backdrop" aria-hidden="true">
+            <img class="opening-backdrop-image" id="opening-image" alt="">
+            <video class="opening-backdrop-video" id="opening-video" playsinline muted loop></video>
+            <div class="opening-backdrop-shade"></div>
+        </div>
+
+        <div class="opening-shell">
+            <header class="opening-header">
+                <a class="opening-brand" href="#inicio" aria-label="Ir para o conteúdo do site" data-i18n-aria="openingBrand">
+                    <img id="opening-logo" alt="">
+                    <span id="opening-brand-name"></span>
+                </a>
+                <div class="language-switcher language-switcher-opening" aria-label="Selecionar idioma"></div>
+                <button class="opening-sound" id="opening-sound" type="button" hidden></button>
+            </header>
+
+            <div class="opening-content">
+                <p class="opening-eyebrow" id="opening-eyebrow"></p>
+                <h1 id="opening-title"></h1>
+                <p class="opening-subtitle" id="opening-subtitle"></p>
+            </div>
+
+            <nav class="opening-actions" id="opening-actions" aria-label="Acessos principais" data-i18n-aria="openingActions"></nav>
+
+            <footer class="opening-footer">
+                <p id="opening-footer-text"></p>
+                <a class="opening-enter" id="opening-enter" href="#inicio" data-i18n="explore">Explorar o site <span aria-hidden="true">↓</span></a>
+            </footer>
+
+            <p class="opening-media-status" id="opening-media-status" role="status" aria-live="polite"></p>
+        </div>
+        <audio id="opening-audio" preload="none"></audio>
+    </section>
+
+    <div class="logo-layer">
+        <img id="brand-logo" src="" alt="">
+        <span id="brand-name-header"></span>
+        <div class="language-switcher language-switcher-desktop" aria-label="Selecionar idioma"></div>
+    </div>
+
+    <div class="top-bar" id="top-bar" role="note" aria-live="polite">
+        
+    </div>
+
+    <header class="header-sticky">
+        <div class="header-left">
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle" type="button"
+                aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+
+        <div class="header-center">
+            <a href="#" id="btn-header-cardapio" class="btn-strat btn-outline-gold" target="_blank"
+                rel="noopener noreferrer">
+                
+            </a>
+
+            <a href="#" id="btn-header-pedir" class="btn-header btn-solid-gold" target="_blank"
+                rel="noopener noreferrer">
+                
+            </a>
+        </div>
+
+        <div class="header-right" id="status-loja" role="status" aria-live="polite" aria-atomic="true">
+            
+        </div>
+        <nav class="mobile-menu" id="mobile-menu" aria-label="Menu principal" data-i18n-aria="menuLabel" hidden>
+            <a href="#cardapio" data-i18n="navMenu">Cardápio</a>
+            <a href="#eventos" data-i18n="navEvents">Reservas e eventos</a>
+            <a href="#testimonials-section" data-i18n="navTestimonials">Depoimentos</a>
+            <a href="#localizacao" data-i18n="navLocation">Localização</a>
+            <div class="language-switcher language-switcher-mobile" aria-label="Selecionar idioma"></div>
+        </nav>
+    </header>
+
+    <section class="hero" id="inicio">
+        <div class="hero-video-holder" id="hero-video-holder" data-hero-video-src="" data-hero-video-type="auto" aria-hidden="true">
+        </div>
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <h1 class="reveal active" id="hero-title"></h1>
+            <p class="tagline reveal active" id="hero-subtitle"></p>
+            <p class="hero-promo reveal active" id="hero-promo"></p>
+        </div>
+    </section>
+
+    <section id="strategic-section" class="dynamic-bar reveal">
+        <div id="strategic-content" class="strategic-container"></div>
+    </section>
+
+    <section
+        id="weekly-highlight-section"
+        class="weekly-highlight-section reveal"
+        hidden
+    >
+        <div class="weekly-highlight-container">
+            <div id="weekly-highlight-media" class="weekly-highlight-media" hidden>
+                <img
+                    id="weekly-highlight-image"
+                    src=""
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                >
+            </div>
+
+            <div class="weekly-highlight-content">
+                <span id="weekly-highlight-badge" class="weekly-highlight-badge" hidden></span>
+
+                <h2 id="weekly-highlight-title"></h2>
+
+                <div id="weekly-highlight-emphasis" class="weekly-highlight-emphasis" hidden></div>
+
+                <p id="weekly-highlight-text"></p>
+
+                <div id="weekly-highlight-lines" class="weekly-highlight-lines" hidden></div>
+
+                <a
+                    id="weekly-highlight-cta"
+                    class="btn-modern btn-solid-gold weekly-highlight-cta"
+                    href="#"
+                    hidden
+                    target="_blank"
+                    rel="noopener noreferrer"
+                ></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="suggestion-section reveal" id="suggestion-section">
+        <h2 id="suggestion-section-title"></h2>
+
+        <div class="suggestion-card" id="suggestion-card">
+            <img src="" alt="Sugestão do Chef" class="suggestion-img" id="suggestion-img">
+
+            <div class="suggestion-content">
+                <span class="suggestion-badge" id="suggestion-badge">
+                    
+                </span>
+
+                <h3 id="suggestion-product-name"></h3>
+
+                <p id="sugestao-texto">
+                    
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials-section reveal" id="testimonials-section">
+        <div class="section-header">
+            <h2 id="testimonials-title"></h2>
+            <p class="section-subtitle" id="testimonials-subtitle"></p>
+        </div>
+
+        <div class="testimonial-grid" id="testimonial-grid"></div>
+    </section>
+
+    <section id="reels-section" class="highlight-section reveal reels-section">
+        <div class="section-header reels-header">
+            <h2 id="reels-title"></h2>
+            <p class="section-subtitle" id="reels-subtitle"></p>
+        </div>
+
+        <div class="reels-wrapper">
+            <button class="nav-arrow left-arrow" type="button" onclick="scrollReels(-300)" aria-label="Voltar Reels" data-i18n-aria="backReels">
+                ❮
+            </button>
+
+            <div class="reels-carousel" id="reels-track"></div>
+
+            <button class="nav-arrow right-arrow" type="button" onclick="scrollReels(300)" aria-label="Avançar Reels" data-i18n-aria="nextReels">
+                ❯
+            </button>
+        </div>
+    </section>
+
+    <section id="cardapio" class="highlight-section">
+        <div class="section-header reveal">
+            <h2 id="products-section-title"></h2>
+            <p class="section-subtitle" id="products-section-subtitle"></p>
+        </div>
+
+        <div class="product-grid" id="product-grid"></div>
+    </section>
+
+    <section id="eventos" class="events-section reveal">
+        <div class="section-header">
+            <h2 id="events-section-title"></h2>
+            <p class="section-subtitle" id="events-section-subtitle"></p>
+        </div>
+
+        <div class="events-grid" id="events-grid"></div>
+    </section>
+
+    <section class="rodizio-section" aria-labelledby="rodizio-title">
+        <div class="rodizio-layout">
+            <div class="rodizio-video-wrap">
+                <video class="rodizio-video" controls playsinline preload="metadata"
+                    aria-label="Vídeo da Quinta do Rodízio">
+                    <source src="rodizio.mp4" type="video/mp4">
+                    Seu navegador não consegue reproduzir este vídeo.
+                </video>
+            </div>
+            <div class="rodizio-copy">
+                <h2 id="rodizio-title">Quinta do Rodízio 🍕⚡</h2>
+                <p>⚡🍕 Toda quinta-feira, a partir das 19h30, a energia do sabor toma conta do Rodízio Ofre!</p>
+                <p>Venha prestigiar uma noite especial com pizzas doces e salgadas, mini pastéis, batata frita e frango, tudo preparado para você aproveitar à vontade.</p>
+                <p>🔌 Reúna a família e os amigos e venha se conectar com a gente. Esperamos por você na VENEZA FUOCO! ⚡</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal-overlay" id="eventModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="evTitle">
+        <div class="modal-content event-modal-content">
+            <button class="close-modal" type="button" onclick="closeEventModal()" aria-label="Fechar modal" data-i18n-aria="closeModal">
+                ×
+            </button>
+
+            <div class="modal-header event-modal-header">
+                <h2 id="evTitle"></h2>
+                <p id="evSubtitle"></p>
+            </div>
+
+            <div class="event-form-wrapper">
+                <div class="form-group">
+                    <label for="evNome"></label>
+                        <input type="text" id="evNome" placeholder="" autocomplete="name">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="evWpp"></label>
+                        <input type="tel" id="evWpp" placeholder="" autocomplete="tel">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="evData"></label>
+                        <input type="date" id="evData">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group" id="evBoxHora">
+                        <label for="evHora"></label>
+                        <input type="time" id="evHora">
+                    </div>
+
+                    <div class="form-group" id="evBoxPessoas">
+                        <label for="evPessoas"></label>
+                        <input type="number" id="evPessoas" min="1" placeholder=""
+                            oninput="calcularDescontoModal()">
+                    </div>
+                </div>
+
+                <div class="form-group" id="evBoxTipo">
+                    <label for="evTipo"></label>
+                    <select id="evTipo"></select>
+                </div>
+
+                <div class="form-group">
+                    <label for="evObs"></label>
+                    <textarea id="evObs" rows="2" placeholder=""></textarea>
+                </div>
+
+                <div id="evBadge" class="discount-badge"></div>
+
+                <button id="event-submit-btn" class="btn-modern btn-wpp event-submit-btn" type="button" onclick="enviarFormularioWhatsApp()">
+                    
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="comboModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modalMainTitle">
+        <div class="modal-content combo-modal-content">
+            <button class="close-modal" type="button" onclick="closeModal()" aria-label="Fechar modal" data-i18n-aria="closeModal">
+                ×
+            </button>
+
+            <div class="modal-header">
+                <h2 id="modalMainTitle"></h2>
+                <p id="modalSubTitle"></p>
+            </div>
+
+            <div class="combo-showcase">
+                <div class="item-card">
+                    <img id="modalPizzaImg" class="item-img" alt="">
+
+                    <div class="item-info">
+                        <h4 id="modalPizzaTitle"></h4>
+                        <div class="price" id="modalPizzaPrice"></div>
+                    </div>
+                </div>
+
+                <div class="plus-icon" aria-hidden="true">+</div>
+
+                <div class="item-card upsell-highlight">
+                    <img id="modalUpsellImg" class="item-img" alt="">
+
+                    <div class="item-info">
+                        <h4 id="modalUpsellTitle"></h4>
+                        <div class="price" id="modalUpsellPrice"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-actions">
+                <a href="#" id="modal-btn-wpp" class="btn-modern btn-wpp" target="_blank" rel="noopener noreferrer">
+                    
+                </a>
+
+                <button class="btn-continue-sem" id="modal-btn-sem-adicional" type="button">
+                    
+                </button>
+
+                <a href="#" id="modal-btn-ifood" class="btn-modern btn-ifood" target="_blank" rel="noopener noreferrer">
+                    
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="qualifierModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="qualifierTitle">
+        <div class="modal-content qualifier-modal-content">
+            <button class="close-modal" type="button" onclick="closeQualifierModal()" aria-label="Fechar modal" data-i18n-aria="closeModal">
+                ×
+            </button>
+
+            <div class="modal-header">
+                <h2 id="qualifierTitle"></h2>
+                <p id="qualifierSubtitle"></p>
+            </div>
+
+            <div class="qualifier-body">
+                <img src="" alt="" id="qualifier-img" class="qualifier-img">
+
+                <div class="qualifier-actions">
+                    <a href="#" id="btn-qualifier-sugestao" class="btn-modern btn-wpp" target="_blank"
+                        rel="noopener noreferrer" onclick="closeQualifierModal()">
+                        
+                    </a>
+
+                    <a href="#" id="btn-qualifier-cardapio" class="btn-modern btn-gold" target="_blank"
+                        rel="noopener noreferrer" onclick="closeQualifierModal()">
+                        
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="footer-space" aria-labelledby="footer-space-title">
+        <img
+            class="footer-space-image"
+            src="logo.png"
+            alt="Identidade da VENEZA FUOCO, pizzaria italiana"
+            loading="lazy"
+            decoding="async"
+        >
+        <div class="footer-space-content">
+            <h2 id="footer-space-title" data-i18n="spaceSectionTitle">Venha nos Visitar HOJE.</h2>
+            <p data-i18n="spaceSectionDescription">Nosso espaço é aconchegante e climatizado, com atendimento acolhedor. Venha nos conhecer e viver memórias inesquecíveis, com muito sabor e qualidade!</p>
+        </div>
+    </section>
+
+    <section id="localizacao" class="highlight-section location-section reveal">
+        <div class="section-header">
+            <h2 id="location-title"></h2>
+            <p class="section-subtitle" id="location-subtitle"></p>
+        </div>
+
+        <div class="location-container">
+            <div class="map-card">
+                <iframe id="google-map-iframe" src="" title="Mapa da localização" data-i18n-title="mapTitle" width="100%" height="400" style="border:0;" allowfullscreen
+                    loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+
+            <div class="location-info">
+                <h3 id="location-card-title"></h3>
+
+                <p id="location-address"></p>
+
+                <a href="#" target="_blank" rel="noopener noreferrer" id="btn-google-route"
+                    class="btn-modern btn-solid-gold location-route-btn">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="premium-footer">
+        <div class="footer-container">
+
+            <div class="footer-brand">
+                <h2 id="footer-brand-name"></h2>
+
+                <p id="footer-brand-slogan">
+                    
+                </p>
+
+                <div class="footer-social">
+                    <a href="#" id="footer-instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <span>📸</span>
+                    </a>
+
+                    <a href="#" id="footer-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                        <span>💬</span>
+                    </a>
+
+                    <a href="#" id="footer-facebook" target="_blank" rel="noopener noreferrer" aria-label="Facebook"
+                        class="optional-social">
+                        <span>f</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h3 id="footer-navigation-title"></h3>
+                <a id="footer-link-pedido" href="#strategic-section"></a>
+                <a id="footer-link-produtos" href="#cardapio"></a>
+                <a id="footer-link-eventos" href="#eventos"></a>
+                <a id="footer-link-reels" href="#reels-section"></a>
+                <a id="footer-link-localizacao" href="#localizacao"></a>
+                <a id="footer-link-topo" href="#inicio"></a>
+            </div>
+
+            <div class="footer-links">
+                <h3 id="footer-experiencias-title"></h3>
+                <a id="footer-link-reserva" href="#" onclick="openEventModal('reserva'); return false;"></a>
+                <a id="footer-link-aniversario" href="#" onclick="openEventModal('aniversario'); return false;"></a>
+                <a id="footer-link-confraternizacao" href="#" onclick="openEventModal('confraternizacao'); return false;"></a>
+            </div>
+
+            <div class="footer-contact">
+                <h3 id="footer-contact-title"></h3>
+
+                <p id="footer-line-1"></p>
+                <p id="footer-line-2"></p>
+                <p id="footer-line-3"></p>
+
+                <a href="#" id="footer-btn-pedido" class="footer-cta" target="_blank" rel="noopener noreferrer">
+                    
+                </a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p id="footer-rights"></p>
+            <p id="footer-system-text"></p>
+        </div>
+    </footer>
+
+    <div class="modal-overlay" id="roletaModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="roleta-title">
+        <div class="modal-content roleta-modal-content">
+            <button class="close-modal" type="button" onclick="fecharRoleta()" aria-label="Fechar roleta" data-i18n-aria="closeWheel">
+                ×
+            </button>
+
+            <div class="modal-header roleta-header">
+                <h2 id="roleta-title"></h2>
+
+                <p id="roleta-subtitle">
+                    
+                </p>
+            </div>
+
+            <div class="roleta-3d-wrapper">
+                <div class="roleta-pointer"></div>
+
+                <div class="roleta-rim">
+                    <div class="roleta-wheel" id="roleta"></div>
+                </div>
+            </div>
+
+            <div class="roleta-actions-wrapper">
+                <button id="btn-girar-roleta" class="btn-modern btn-solid-gold roleta-spin-btn" type="button"
+                    onclick="iniciarRoleta()">
+                    
+                </button>
+
+                <div id="roleta-resultado" class="roleta-resultado" aria-live="polite" aria-atomic="true">
+                    <h3 id="premio-titulo"></h3>
+
+                    <p>
+                        <span id="premio-voucher-label"></span>
+                        <strong id="premio-voucher"></strong>
+                    </p>
+
+                    <a href="#" id="btn-resgatar-roleta" class="btn-modern btn-wpp roleta-rescue-btn" target="_blank"
+                        rel="noopener noreferrer" onclick="fecharRoleta()">
+                        
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="promoPopupModal" role="dialog" aria-modal="true" aria-hidden="true"
+        aria-labelledby="promo-popup-title" aria-describedby="promo-popup-description">
+        <article class="modal-content promo-popup-content">
+            <button class="close-modal" id="promo-popup-close" type="button" aria-label="Fechar promoção"
+                data-i18n-aria="closePromotion">×</button>
+            <img id="promo-popup-image" class="promo-popup-image" src="" alt="" hidden>
+            <div class="promo-popup-copy">
+                <p id="promo-popup-eyebrow" class="promo-popup-eyebrow"></p>
+                <h2 id="promo-popup-title"></h2>
+                <p id="promo-popup-description"></p>
+                <strong id="promo-popup-price" class="promo-popup-price" hidden></strong>
+            </div>
+            <div class="promo-popup-actions">
+                <a id="promo-popup-cta" class="btn-modern btn-solid-gold" href="#" target="_blank"
+                    rel="noopener noreferrer"></a>
+                <a id="promo-popup-menu" class="promo-popup-menu-link" href="#" target="_blank"
+                    rel="noopener noreferrer" data-i18n="popupViewMenu">Ver cardápio</a>
+            </div>
+        </article>
+    </div>
+
+
+    <button id="site-cart-button" class="site-cart-button" type="button" onclick="abrirCarrinhoSite()" aria-label="Ver pedido" hidden>
+        <span class="site-cart-button-icon" aria-hidden="true">🛒</span>
+        <span id="site-cart-count">0 itens</span>
+        <strong id="site-cart-total">R$ 0,00</strong>
+    </button>
+
+    <div class="modal-overlay site-cart-overlay" id="siteCartModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="site-cart-title">
+        <section class="modal-content site-cart-modal-content">
+            <button class="close-modal" type="button" onclick="fecharCarrinhoSite()" aria-label="Fechar carrinho">×</button>
+            <div class="site-cart-content">
+                <span class="site-cart-kicker" id="site-cart-kicker">Seu pedido</span>
+                <h2 id="site-cart-title">Revise antes de enviar</h2>
+                <p id="site-cart-status">Confira os itens e finalize seu pedido.</p>
+                <div id="site-cart-items" class="site-cart-items"></div>
+                <div id="site-cart-upsell" class="site-cart-upsell" hidden></div>
+                <div class="site-cart-summary">
+                    <span id="site-cart-total-label">Total estimado</span>
+                    <strong id="site-cart-modal-total">R$ 0,00</strong>
+                </div>
+                <div class="site-cart-actions">
+                    <button class="site-cart-continue" type="button" onclick="continuarComprandoSite()">Continuar comprando</button>
+                    <button class="site-cart-checkout" type="button" onclick="irParaCheckoutCardapio()">Finalizar pedido</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <button class="back-to-top" id="back-to-top" type="button" aria-label="Voltar ao topo"
+        data-i18n-aria="backToTop" title="Voltar ao topo" data-i18n-title="backToTop">
+        <span aria-hidden="true">↑</span>
+    </button>
+
+    <noscript data-i18n="noscript">Este site precisa de JavaScript ativado para exibir cardápio, pedidos e horários corretamente.</noscript>
+
+    <script src="config.js"></script>
+    <script src="cardapio/config.js"></script>
+    <script src="translations.js"></script>
+    <script src="cardapio/translations.js"></script>
+    <script src="shared-cart.js"></script>
+    <script src="script.js"></script>
+    <script src="sr-operacao-live.js"></script>
+
+</body>
+
+</html>

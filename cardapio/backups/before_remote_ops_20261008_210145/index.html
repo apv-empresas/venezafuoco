@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cardápio | Sr. Ofrélio Pizza House</title>
+  <meta name="description" content="Cardápio da Sr. Ofrélio Pizza House em Cianorte." id="meta-description">
+  <meta name="robots" content="index,follow" id="meta-robots">
+  <meta name="theme-color" content="#183321" id="meta-theme-color">
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link id="google-fonts-link" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="welcome-screen">
+    <div class="welcome-container">
+      <div class="logo-area">
+        <img src="logo.png" alt="Sr. Ofrélio Pizza House" data-logo-principal>
+      </div>
+
+      <div class="welcome-text">
+        <h1 data-texto-boas-vindas>Seja bem-vindo</h1>
+        <p data-subtitulo-boas-vindas>Escolha sua categoria e monte seu pedido.</p>
+      </div>
+
+      <div class="store-status-card" data-status-card aria-live="polite">
+        <strong data-status-titulo>Verificando horário...</strong>
+        <span data-status-explicacao></span>
+      </div>
+
+      <div class="primary-channel-box">
+        <span class="primary-channel-kicker">Canal principal</span>
+        <a class="channel-primary-btn" href="#" data-whatsapp-principal>💬 Pedir pelo WhatsApp</a>
+      </div>
+
+      <div class="delivery-top-area" aria-label="Canais alternativos de pedido" data-canais-alternativos>
+        <span>Outras opções</span>
+        <div class="delivery-top-buttons">
+          <a class="delivery-channel-btn ifood" href="#" target="_blank" rel="noopener" data-canal="ifood">iFood</a>
+          <a class="delivery-channel-btn aiqfome" href="#" target="_blank" rel="noopener" data-canal="aiqfome">aiqfome</a>
+        </div>
+      </div>
+
+      <a href="#" class="btn-voltar-site" data-site-principal data-botao-voltar-site>← Voltar para o site</a>
+      <div id="welcome-categories"></div>
+    </div>
+
+    <footer class="site-footer" data-footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <img src="logo.png" alt="Sr. Ofrélio Logo" class="footer-logo" data-logo-principal>
+          <p data-footer-slogan></p>
+        </div>
+        <div class="footer-section">
+          <h3>Atendimento</h3>
+          <a data-footer-endereco-link target="_blank" rel="noopener"><p data-footer-endereco></p></a>
+          <a data-footer-whatsapp-link target="_blank" rel="noopener"><p data-footer-whatsapp></p></a>
+          <p data-footer-horario></p>
+        </div>
+        <div class="footer-section">
+          <h3>Acompanhe</h3>
+          <div class="social-links"><a href="#" target="_blank" data-instagram-link>Instagram</a></div>
+          <h3>Outras opções</h3>
+          <div class="delivery-links">
+            <a class="delivery-link ifood" href="#" target="_blank" rel="noopener" data-canal="ifood">iFood</a>
+            <a class="delivery-link aiqfome" href="#" target="_blank" rel="noopener" data-canal="aiqfome">aiqfome</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom"><p data-footer-direitos></p></div>
+    </footer>
+  </div>
+
+  <div id="cardapio-main-area" class="escondido">
+    <header>
+      <div class="menu-header-brand">
+        <img src="logo.png" alt="" data-logo-principal>
+        <div>
+          <h1 data-titulo-cardapio>Cardápio Sr. Ofrélio</h1>
+          <p data-subtitulo-cardapio></p>
+        </div>
+      </div>
+      <div class="store-status-inline" data-status-card aria-live="polite">
+        <strong data-status-titulo>Verificando horário...</strong>
+        <span data-status-explicacao></span>
+      </div>
+    </header>
+
+    <div class="cardapio-back-area">
+      <button class="btn-voltar" onclick="voltarParaInicio()" data-botao-voltar-categorias>← Voltar para categorias</button>
+    </div>
+
+    <main class="menu" id="menu"></main>
+
+    <footer class="site-footer" data-footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <img src="logo.png" alt="Sr. Ofrélio Logo" class="footer-logo" data-logo-principal>
+          <p data-footer-slogan></p>
+        </div>
+        <div class="footer-section">
+          <h3>Atendimento</h3>
+          <a data-footer-endereco-link target="_blank" rel="noopener"><p data-footer-endereco></p></a>
+          <a data-footer-whatsapp-link target="_blank" rel="noopener"><p data-footer-whatsapp></p></a>
+          <p data-footer-horario></p>
+        </div>
+        <div class="footer-section">
+          <h3>Acompanhe</h3>
+          <div class="social-links"><a href="#" target="_blank" data-instagram-link>Instagram</a></div>
+          <div class="delivery-links">
+            <a class="delivery-link ifood" href="#" target="_blank" rel="noopener" data-canal="ifood">iFood</a>
+            <a class="delivery-link aiqfome" href="#" target="_blank" rel="noopener" data-canal="aiqfome">aiqfome</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom"><p data-footer-direitos></p></div>
+    </footer>
+  </div>
+
+  <!-- Modal original evoluído: mantém o fluxo direto e adiciona carrinho. -->
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modalTitulo">
+    <div class="modal-box">
+      <button class="close" onclick="fecharModal()" aria-label="Fechar">×</button>
+      <div class="modal-content">
+        <div class="modal-left"><img id="modalImagem" src="" alt="Pizza escolhida"></div>
+        <div class="modal-right">
+          <div id="modalSelo" class="product-badge"></div>
+          <h2 id="modalTitulo"></h2>
+          <p id="modalDescricao"></p>
+          <div id="modalMeta" class="product-meta"></div>
+          <div class="total" id="modalPreco"></div>
+
+          <div class="form-group">
+            <label for="quantidade">Quantidade</label>
+            <input type="number" id="quantidade" min="1" value="1" oninput="atualizarTotal()">
+          </div>
+          <div class="form-group">
+            <label for="endereco">Endereço de entrega</label>
+            <input type="text" id="endereco" placeholder="Rua, número, bairro e referência" autocomplete="street-address">
+            <small class="field-help">Mantido para o fluxo direto. No carrinho, o endereço também pode ser informado no fechamento.</small>
+          </div>
+          <div class="form-group">
+            <label for="observacoes">Observações do item</label>
+            <textarea id="observacoes" placeholder="Ex: sem cebola, pouco orégano..."></textarea>
+          </div>
+          <div class="upsell-box" data-upsell-box>
+            <strong>Complete seu pedido</strong>
+            <div id="upsellsArea"></div>
+          </div>
+          <div class="total" id="totalPedido"></div>
+          <p class="total-note" data-total-note></p>
+
+          <div class="modal-primary-actions">
+            <button class="btn-add-cart" onclick="adicionarSelecionadoAoCarrinho()" data-botao-adicionar>Adicionar ao pedido</button>
+            <button class="btn-final" onclick="finalizarPedido()" data-botao-finalizar>Finalizar pelo WhatsApp</button>
+          </div>
+          <div class="alternative-channel-panel">
+            <span>Prefere outro aplicativo?</span>
+            <div class="delivery-card-buttons">
+              <a class="delivery-channel-btn ifood" href="#" target="_blank" rel="noopener" data-canal="ifood">iFood</a>
+              <a class="delivery-channel-btn aiqfome" href="#" target="_blank" rel="noopener" data-canal="aiqfome">aiqfome</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button id="cart-floating-button" class="cart-floating-button" type="button" onclick="abrirCarrinho()" aria-label="Abrir pedido" hidden>
+    <span>🛒</span><span id="cart-floating-text">0 itens</span><strong id="cart-floating-total">R$ 0,00</strong>
+  </button>
+
+  <div class="modal" id="cartModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="cartTitle">
+    <div class="modal-box cart-modal-box">
+      <button class="close" onclick="fecharCarrinho()" aria-label="Fechar">×</button>
+      <div class="cart-content">
+        <div class="cart-header">
+          <span class="cart-kicker">Seu pedido</span>
+          <h2 id="cartTitle">Revise antes de enviar</h2>
+          <p id="cartStatusText"></p>
+        </div>
+        <div id="cartItems" class="cart-items"></div>
+        <div class="cart-summary"><span>Total estimado</span><strong id="cartTotal">R$ 0,00</strong></div>
+        <p class="total-note" data-total-note></p>
+
+        <div class="checkout-grid">
+          <div class="form-group">
+            <label for="checkoutNome">Nome *</label>
+            <input id="checkoutNome" type="text" autocomplete="name" placeholder="Seu nome">
+          </div>
+          <div class="form-group">
+            <label for="checkoutAtendimento">Como deseja receber? *</label>
+            <select id="checkoutAtendimento" onchange="atualizarCamposCheckout()"></select>
+          </div>
+          <div class="form-group checkout-address-field">
+            <label for="checkoutEndereco">Endereço de entrega *</label>
+            <input id="checkoutEndereco" type="text" autocomplete="street-address" placeholder="Rua, número, bairro e referência">
+          </div>
+          <div class="form-group">
+            <label for="checkoutPagamento">Forma de pagamento *</label>
+            <select id="checkoutPagamento" onchange="atualizarCamposCheckout()"></select>
+          </div>
+          <div class="form-group checkout-change-field" hidden>
+            <label for="checkoutTroco">Troco para quanto?</label>
+            <input id="checkoutTroco" type="text" inputmode="decimal" placeholder="Ex: R$ 100,00">
+          </div>
+          <div class="form-group">
+            <label for="checkoutObservacoes">Observações gerais</label>
+            <textarea id="checkoutObservacoes" placeholder="Ex: portaria, ponto de referência, observação do pedido..."></textarea>
+          </div>
+        </div>
+
+        <button id="cartWhatsappButton" class="btn-final cart-whatsapp-button" type="button" onclick="finalizarCarrinhoNoWhatsApp()">Finalizar pelo WhatsApp</button>
+        <div class="alternative-channel-panel cart-alternatives">
+          <span>Outros canais disponíveis</span>
+          <div class="delivery-card-buttons">
+            <a class="delivery-channel-btn ifood" href="#" target="_blank" rel="noopener" data-canal="ifood">iFood</a>
+            <a class="delivery-channel-btn aiqfome" href="#" target="_blank" rel="noopener" data-canal="aiqfome">aiqfome</a>
+          </div>
+          <small>Itens montados neste cardápio não são transferidos automaticamente para aplicativos externos.</small>
+        </div>
+        <button class="btn-clear-cart" type="button" onclick="esvaziarCarrinho()">Esvaziar pedido</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
