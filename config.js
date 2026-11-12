@@ -5,7 +5,7 @@ window.SITE_CONFIG = {
         "slogan": "Tradição italiana, sabores que aproximam.",
         "segmento": "Pizzaria",
         "logoPrincipal": "logo-marca-horizontal.png",
-        "logoFavicon": "favicon-veneza.png"
+        "logoFavicon": "favicon-veneza.webp"
     },
     "seo": {
         "titulo": "VENEZA FUOCO",
@@ -640,7 +640,7 @@ window.SITE_CONFIG = {
             "cardTitulo": "Reserve sua Mesa",
             "cardTexto": "Garanta o seu lugar na pizzaria e desfrute de um ambiente agradável com o melhor atendimento da casa.",
             "botao": "Fazer Reserva",
-            "imagem": "https://lh3.googleusercontent.com/gps-cs-s/ANWiy9S_M4c7KKuGobGPQ7NXQeODlxosLZJvBsVaGzRSotB8WTUQGLgTG1ndHFLFDGBuWKysSYG8TRk3cPp2kR8eWuSoqp67JS6CUanwK4e8tU0GE7UlV0Oe_PJclzlu5IArGOLq7ECkt2GPBJg=s1360-w1360-h1020-rw"
+            "imagem": "reserva.png"
         },
         "aniversario": {
             "titulo": "Seu Aniversário",
